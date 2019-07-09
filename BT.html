@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="nhapso"/>
+<button type="button" id="kiemtra" onclick="songuyento()">kiem tra</button>
+<button type="button" id="kiemtra1" onclick="checksonguyento()">Check</button>
+<div id="ketqua"></div>
+<script>
+    function songuyento() {
+        let num = document.getElementById('nhapso').value;
+        let count = 0;
+        for (let i = 1; i <= num; i++) {
+            let dem = 0;
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    dem++;
+                }
+            }
+            if (dem == 2) {
+                document.write('số' + i + 'là số nguyên tố' + '<br>');
+                count++;
+
+            }
+
+        }
+        console.log(count);
+    }
+
+    function checksonguyento() {
+        let num1 = document.getElementById('nhapso').value;
+        let dem2 = 0;
+        for (let a = 0; a <= num1; a++) {
+
+
+            if (num1 % a == 0) {
+                dem2 ++;
+
+            }
+        }
+        if (dem2 == 2) {
+            document.getElementById('ketqua').innerHTML = num1 + 'la so nguyen to';
+        } else {
+            document.getElementById('ketqua').innerHTML = num1 + 'khong la so nguyen to';
+        }
+    }
+</script>
+</body>
+</html>
